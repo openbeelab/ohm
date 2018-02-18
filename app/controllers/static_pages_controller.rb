@@ -1,9 +1,10 @@
 class StaticPagesController < ApplicationController
-  layout 'website', :only => [ :home, :about ]
+  layout 'static_pages', :only => [ :cgu ]
 
   def home
+    render layout: "homepage"
   end
 
-  def about
+  def cgu
   end
 end
