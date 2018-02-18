@@ -1,0 +1,26 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "openhivemanager"
+      MYSQL_USER: "openhivemanager"
+      MYSQL_PASSWORD: "openhivemanager"
+    networks:
+      - openhivemanager
+
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - openhivemanager
+
+networks:
+  openhivemanager:
