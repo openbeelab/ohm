@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get '/cgu', to: 'static_pages#cgu'
   get '/contact', to: 'static_pages#contact'
 
-  get '/login', to: 'users#login'
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 end

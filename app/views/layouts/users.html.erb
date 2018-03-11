@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenHiveManager</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'users', "https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" %>
+    <%= javascript_include_tag 'users', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse">
+      <div class="navbar-header">
+        <%= link_to "OpenHiveManager", { controller: "static_pages", action: "home" }, class: "navbar-brand" %>
+        <ul class="nav navbar-nav pull-right visible-xs-block">
+          <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+          <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to controller: "static_pages", action: "home" do %>
+              <i class="fa fa-home position-left"></i> Manager
+            <% end %>
+          </li>
+          <li>
+            <%= link_to controller: "static_pages", action: "cgu" do %>
+              <i class="fa fa-book position-left"></i> CGU
+            <% end %>
+          </li>
+          <li>
+            <%= link_to controller: "static_pages", action: "contact" do %>
+              <i class="fa fa-envelope position-left"></i> Contact
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://www.pikari.fr/c/yhzdbn" do %>
+              <strong><i class="fa fa-heart position-left"></i> Participez</strong>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <%= yield %>
+
+    <!-- Footer -->
+    <div class="footer text-muted">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+      Ce <a href="http://www.openhivemanager.org" property="cc:attributionName" rel="cc:attributionURL">site</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licence Creative Commons Attribution - Pas d&#39;Utilisation Commerciale - Pas de Modification 4.0 International</a>.  
+    </div>
+  <!-- /footer -->
+
+  </body>
+</html>

@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     render :new
   end
 
-
   private
 
   def allowed_params
