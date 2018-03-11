@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309222558) do
+ActiveRecord::Schema.define(version: 20180310231839) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username"
     t.string   "email"
     t.boolean  "enabled"
-    t.string   "password"
+    t.string   "password_digest"
     t.datetime "last_login"
     t.boolean  "locked"
     t.boolean  "expired"
