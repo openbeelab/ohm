@@ -10,12 +10,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(allowed_params)
-    if @user.save
-      flash[:notice] = "OK"
-      flash[:color] = "valid"
+    if params[:accept_cgu] != "on"
+      flash[:notice] = "You must accept CGU to register."
     else
-      flash[:notice] = "KO"
-      flash[:color] = "invalid"
+      @user.save
     end
 
     render :new

@@ -79,9 +79,16 @@
 										<div class="checkbox">
 											<label>
 												<input name="accept_cgu" type="checkbox" class="styled">
-													J'accepte les <a href="{{ path('kg_site_cgu') }}">conditions générales d'utilisation</a>
+													J'accepte les <a href="/cgu">conditions générales d'utilisation</a>
 											</label>
 										</div>
+										<% if flash.any? %>
+											<ul class="help-block">
+												<% flash.each do |key, value| %>
+													<li><%= content_tag :div, value %></li>
+												<% end %>
+											</ul>
+										<% end %>
 									</div>
 
 									<div class="text-right" id="bouton_submit">
