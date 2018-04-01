@@ -1,0 +1,11 @@
+language: ruby
+services: docker
+rvm:
+  - "2.4.0"
+env:
+  - DB=mysql
+install:
+  - bundle install --path vendor/
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rails test
