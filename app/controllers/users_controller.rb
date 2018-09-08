@@ -12,11 +12,14 @@ class UsersController < ApplicationController
     @user = User.new(allowed_params)
     if params[:accept_cgu] != "on"
       flash[:notice] = "You must accept CGU to register."
+      render :new
     else
-      @user.save
+      if @user.save
+        redirect_to controller: "sessions", action: "new"
+      else
+        render :new
+      end
     end
-
-    render :new
   end
 
   private
